@@ -11,27 +11,25 @@ As a reader, I want to log in with my email address and password so that I can a
 
 
 Given the user is on the login page
-When the user enters valid credentials
-And selects the login option
-Then the system validates that the entered credentials are correct
-And grants access to the application
-And keeps the session active while the user is using the application
+When the user enters valid credentials and submits the form
+Then the system grants access to the application
 
 Given the user is on the login page
-When the user attempts to log in with one or more required fields empty
-Then the system does not allow access
-And displays a message indicating that all required fields must be completed
+When the user submits the login form without entering credentials
+Then the system displays an error message requesting required fields
 
 Given the user is on the login page
-When the user enters invalid credentials
-Then the system validates the entered credentials
-And denies access
-And displays a message indicating that the credentials are incorrect
+When the user enters an incorrect password
+Then the system denies access and shows an authentication error message
 
-Given the user is logged in
-When the user selects the logout option
-Then the system ends the session
-And redirects the user to the login page
+Given the user is logged into the application
+When the user clicks on the logout button
+Then the system terminates the session and redirects the user to the login page
+
+Given the user has an active session
+When the session remains inactive for a period of time
+Then the system automatically logs the user out for security reasons
+
 ⸻
 
 **User Registration**
@@ -57,6 +55,7 @@ Given the user enters a password that does not meet the minimum security require
 When the user submits the registration form
 Then the system does not create the account
 And displays a message indicating that the password does not meet the security requirements
+
 ⸻
 
 **CRUD (Book Management)**
@@ -79,3 +78,48 @@ Then the system displays the list of registered books
 Given the user has one or more books registered
 When the user selects a book and chooses the delete option
 Then the system removes the book from the list successfully
+
+⸻
+
+**Manage Favorite Books**
+
+As a user of the personal library application,
+I want to add and remove books from my favorites list,
+So that I can quickly access my preferred books.
+
+*Acceptance Criteria*
+
+Given the user is viewing a registered book
+When the user marks the book as a favorite
+Then the system adds the book to the favorites list
+
+Given the user has one or more favorite books
+When the user opens the favorites list
+Then the system displays all favorite books
+
+Given the user has a favorite book
+When the user removes the book from the favorites list
+Then the system removes the book from the favorites list
+
+⸻
+
+
+**Manage Reading Status**
+
+As a user of the personal library application,
+I want to mark books as read or unread,
+So that I can keep track of my reading progress.
+
+*Acceptance Criteria*
+
+Given the user is viewing a registered book
+When the user marks the book as read
+Then the system updates the book status to read
+
+Given the user has books marked as read
+When the user views the book list
+Then the system displays the reading status for each book
+
+Given the user has a book marked as read
+When the user marks the book as unread
+Then the system updates the book status to unread
