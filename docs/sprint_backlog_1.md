@@ -1,3 +1,6 @@
+Desarrollar la base funcional de Bookly, permitiendo que los usuarios puedan registrarse, iniciar sesión y visualizar el catálogo de libros mediante una interfaz conectada a la base de datos, dejando preparado el proyecto para implementar las funcionalidades de favoritos y libros leídos en los siguientes sprints.
+
+
 | ID      | Historia de Usuario                                          | Tarea                                                     | Subtareas                                                                                                                                                                          | Responsable     | Prioridad |
 | ------- | ------------------------------------------------------------ | --------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------- | --------- |
 | HU-01   | Como usuario quiero registrarme para crear una cuenta.       | Diseñar formulario de registro                            | • Crear el diseño de la pantalla.<br>• Agregar campos de nombre, correo y contraseña.<br>• Agregar botón **Registrarse**.<br>• Mostrar mensajes de validación.                     | Equipo Frontend | Alta      |
